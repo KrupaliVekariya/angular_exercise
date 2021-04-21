@@ -1,0 +1,84 @@
+<div class="container">
+  <h4>Exercise 1:</h4>
+  <div class="row">
+    <div class="col-md-5">
+      <input type="text" class="form-control" placeholder="Enter String" (input)="onTxtString($event)">
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary" (click)="onBtnClick()">Enable</button>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary" [disabled]="!btnEnable" (click)="onTxtStringLength()">Diplay String
+        Length</button>
+    </div>
+    <div class="col-md-3">
+      <p> Length of input string: {{txtStringLength}}</p>
+    </div>
+  </div>
+  <h4>Exercise 2:</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="enter your name" (input)="onTxtName($event)">
+    </div>
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="enter your age" (input)="onTxtAge($event)">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <button class="btn btn-primary" *ngIf="showBtn1" (click)="onTxtDisplay()">Display</button>
+    </div>
+    <div class="col-md-4">
+      <p>{{txtDisplay}}</p>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary" *ngIf="showBtn2" (click)="onBtnHidden()">Hide</button>
+    </div>
+  </div>
+
+  <h4>Exercise 3:</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="enter your name" (input)="onTxtStringName($event)">
+    </div>
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="enter your age" (input)="onTxtStringAge($event)">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-primary"  (click)="onArrayDisplay()">Click</button>
+    </div>
+    <div class="col-md-12">
+      {{txtDisplayArray}}
+    </div>
+  </div>
+  <h4>Exercise 4:</h4>
+  <div class="row">
+    <div class="col-md-8">
+      <input type="text" class="form-control" placeholder="Enter Number" (input)="onTxtNumber($event)">
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary"  (click)="onDisplayOddEven()">Click</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p [ngStyle]="{color:getColor()}" [ngClass]="{odd :numberStatus === 'odd'}">{{txtDisplayNumber}}</p>
+    </div>
+  </div>
+  <h4>Exercise 5:</h4>
+  <div class="row">
+    <div class="col-md-12">
+      <p  >Girinar or Girnar is one of the most ancient and important place of worship for Jains And Hindus as time to time many spiritual souls comes to Girnar mountain for their spiritual development.
+        This is converted Hindu from Jain pilgrimage.<span [ngStyle]="{backgroundColor: getBackColor()}" [ngClass]="{true :spanColor === 'true'}"> The mountain Girnar is older than the Himalayas believed by different faith and practices.</span> 
+        Lord Neminath had Got Moksha From 5th Tonk,And Lord Neminath Diksha And Kevalgyan Kalyanak Got In Sahsavan. Girnar - Where world's oldest Idol situated (Bhagwan Neminath). 
+        Girnar is part of Junagadh town and district in south-western Gujarat, India.
+        Girnar hill is crowned with 5 peaks. First is at about two-thirds of the way up to the Devi Ambika peak is Jain temples - cluster of mosaic-decorated domes interspersed with elaborate stupas.
+        <span [ngStyle]="{backgroundColor: getBackColor()}" [ngClass]="{true :spanColor === 'true'}"> largest and is the 12th-century Temple of Neminath, dedicated to the 22nd Tirthankar.</span> The nearby triple Temple of Mallinath, dedicated to the ninth Tirthankar, was erected in 1177 by two brothers.
+      </p>
+       
+    </div>
+  </div>
+    
+</div>
