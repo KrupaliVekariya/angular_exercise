@@ -47,10 +47,10 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <button class="btn btn-primary"  (click)="onArrayDisplay()">Click</button>
+      <button class="btn btn-primary" (click)="onArrayDisplay()">Click</button>
     </div>
     <div class="col-md-12">
-      {{txtDisplayArray}}
+      <p *ngFor="let info of array let i of array"><b>{{info}}</b></p>
     </div>
   </div>
   <h4>Exercise 4:</h4>

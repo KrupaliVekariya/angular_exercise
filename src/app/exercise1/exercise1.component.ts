@@ -59,7 +59,7 @@ export class Exercise1Component implements OnInit {
   }
 
   onTxtDisplay(){
-    this.txtDisplay = this.startTag+this.person.txtName +this.endTag+ " is " + this.person.txtAge + " year's old.";
+    this.txtDisplay = this.person.txtName + " is " + this.person.txtAge + " year's old.";
     this.showBtn1 = false;
     this.showBtn2 = true;
   }
@@ -78,14 +78,8 @@ export class Exercise1Component implements OnInit {
     this.txtStringAge=(<HTMLInputElement>event.target).value;
   }
   onArrayDisplay() {
-    this.array.push({"name":this.txtStringName,"age":this.txtStringAge});
-   console.log(this.array);
-   this.txtDisplayArray="";
-   for(let i=0 ; i<=this.array.length;i++){
-    this.txtDisplayArray+= this.array[i]["name"]+ ' is '+this.array[i]["age"]+' years old.' ;
-   }
-   
-    }
+    this.array.push([this.txtStringName,this.txtStringAge]);
+  }
 
   //For Exercise 4:
   onTxtNumber(event:Event){
