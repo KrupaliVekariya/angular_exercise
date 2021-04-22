@@ -52,13 +52,13 @@ export class Exercise1Component implements OnInit {
 
   onTxtDisplay(){
     this.txtDisplay  = this.person.txtName  + " " +this.person.txtAge ;
-    // this.showBtn1 = false;
-    // this.showBtn2 = true;
+    this.showBtn1 = false;
+    this.showBtn2 = true;
   }
 
   onBtnHidden(){
-      // this.showBtn1 = true;
-      // this.showBtn2 = false;
+      this.showBtn1 = true;
+      this.showBtn2 = false;
       this.txtDisplay="";
   }
 
