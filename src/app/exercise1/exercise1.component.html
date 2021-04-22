@@ -2,7 +2,7 @@
   <h4>Exercise 1:</h4>
   <div class="row">
     <div class="col-md-5">
-      <input type="text" class="form-control" placeholder="Enter String" (input)="onTxtString($event)">
+      <input type="text" class="form-control" placeholder="Enter String" [(ngModel)]="txtString">
     </div>
     <div class="col-md-2">
       <button class="btn btn-primary" (click)="onBtnClick()">Enable</button>
@@ -18,10 +18,10 @@
   <h4>Exercise 2:</h4>
   <div class="row">
     <div class="col-md-6">
-      <input type="text" class="form-control" placeholder="enter your name" (input)="onTxtName($event)">
+      <input type="text" class="form-control" placeholder="enter your name" [(ngModel)]="person.txtName">
     </div>
     <div class="col-md-6">
-      <input type="text" class="form-control" placeholder="enter your age" (input)="onTxtAge($event)">
+      <input type="number" min="0" class="form-control" placeholder="enter your age" [(ngModel)]="person.txtAge">
     </div>
   </div>
   <div class="row">
@@ -29,7 +29,7 @@
       <button class="btn btn-primary" *ngIf="showBtn1" (click)="onTxtDisplay()">Display</button>
     </div>
     <div class="col-md-4">
-      <p>{{txtDisplay}}</p>
+      <p><b>{{txtDisplay}}</b></p>
     </div>
     <div class="col-md-4">
       <button class="btn btn-primary" *ngIf="showBtn2" (click)="onBtnHidden()">Hide</button>
@@ -39,10 +39,10 @@
   <h4>Exercise 3:</h4>
   <div class="row">
     <div class="col-md-6">
-      <input type="text" class="form-control" placeholder="enter your name" (input)="onTxtStringName($event)">
+      <input type="text" class="form-control" placeholder="enter your name" [(ngModel)]="txtStringName">
     </div>
     <div class="col-md-6">
-      <input type="text" class="form-control" placeholder="enter your age" (input)="onTxtStringAge($event)">
+      <input type="text" class="form-control" placeholder="enter your age" [(ngModel)]="txtStringAge">
     </div>
   </div>
   <div class="row">
@@ -56,10 +56,10 @@
   <h4>Exercise 4:</h4>
   <div class="row">
     <div class="col-md-8">
-      <input type="text" class="form-control" placeholder="Enter Number" (input)="onTxtNumber($event)">
+      <input type="text" class="form-control" placeholder="Enter Number" [(ngModel)]="txtNumber">
     </div>
     <div class="col-md-4">
-      <button class="btn btn-primary"  (click)="onDisplayOddEven()">Click</button>
+      <button  class="btn btn-primary"  (click)="onDisplayOddEven()">Click</button>
     </div>
   </div>
   <div class="row">
@@ -70,7 +70,7 @@
   <h4>Exercise 5:</h4>
   <div class="row">
     <div class="col-md-12">
-      <p  >Girinar or Girnar is one of the most ancient and important place of worship for Jains And Hindus as time to time many spiritual souls comes to Girnar mountain for their spiritual development.
+     <p  >Girinar or Girnar is one of the most ancient and important place of worship for Jains And Hindus as time to time many spiritual souls comes to Girnar mountain for their spiritual development.
         This is converted Hindu from Jain pilgrimage.<span [ngStyle]="{backgroundColor: getBackColor()}" [ngClass]="{true :spanColor === 'true'}"> The mountain Girnar is older than the Himalayas believed by different faith and practices.</span> 
         Lord Neminath had Got Moksha From 5th Tonk,And Lord Neminath Diksha And Kevalgyan Kalyanak Got In Sahsavan. Girnar - Where world's oldest Idol situated (Bhagwan Neminath). 
         Girnar is part of Junagadh town and district in south-western Gujarat, India.

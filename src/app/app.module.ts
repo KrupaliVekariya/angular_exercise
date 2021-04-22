@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule  } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { Exercise1Component } from './exercise1/exercise1.component';
 
@@ -10,7 +10,8 @@ import { Exercise1Component } from './exercise1/exercise1.component';
     Exercise1Component
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
