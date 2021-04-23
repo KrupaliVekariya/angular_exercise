@@ -1,11 +1,12 @@
 <div class="container">
+  <!-- Display length of String -->
   <h4>Exercise 1:</h4>
   <div class="row">
     <div class="col-md-5">
       <input type="text" class="form-control" placeholder="Enter String" [(ngModel)]="txtString">
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary" (click)="onBtnClick()">Enable</button>
+      <button class="btn btn-primary" (click)="btnEnable= !btnEnable">Enable</button>
     </div>
     <div class="col-md-2">
       <button class="btn btn-primary" [disabled]="!btnEnable" (click)="onTxtStringLength()">Diplay String
@@ -15,6 +16,7 @@
       <p> Length of input string: {{txtStringLength}}</p>
     </div>
   </div>
+  <!-- Display name and age -->
   <h4>Exercise 2:</h4>
   <div class="row">
     <div class="col-md-6">
@@ -25,17 +27,17 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
-      <button class="btn btn-primary" *ngIf="showBtn1" (click)="onTxtDisplay()">Display</button>
+    <div class="col-md-4" [hidden]="btnHide">
+      <button class="btn btn-primary"  (click)="onTxtDisplay()">Display</button>
     </div>
     <div class="col-md-4">
-      <p><b>{{txtDisplay}}</b></p>
+      <p *ngFor="let display of txtDisplay let i of txtDisplay"><b>{{display}}</b></p>
     </div>
     <div class="col-md-4">
-      <button class="btn btn-primary" *ngIf="showBtn2" (click)="onBtnHidden()">Hide</button>
+      <button class="btn btn-primary" (click)="!btnHide=btnEnable">Hide</button>
     </div>
   </div>
-
+  <!-- Display name and age  -->
   <h4>Exercise 3:</h4>
   <div class="row">
     <div class="col-md-6">
@@ -53,31 +55,27 @@
       <p *ngFor="let info of array let i of array"><b>{{info}}</b></p>
     </div>
   </div>
+  <!-- Display odd or even Number -->
   <h4>Exercise 4:</h4>
   <div class="row">
     <div class="col-md-8">
       <input type="text" class="form-control" placeholder="Enter Number" [(ngModel)]="txtNumber">
     </div>
-    <div class="col-md-4">
-      <button  class="btn btn-primary"  (click)="onDisplayOddEven()">Click</button>
-    </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <p [ngStyle]="{color:getColor()}" [ngClass]="{odd :numberStatus === 'odd'}">{{txtDisplayNumber}}</p>
+      <p [ngStyle]="{color:'green'}" *ngIf="txtNumber%2===0">{{txtNumber}}</p>
+    </div> 
+ 
+    <div class="col-md-12">
+      <p [ngStyle]="{color:'red'}" *ngIf="txtNumber%2!==0">{{txtNumber}}</p>
     </div>
   </div>
+  <!-- Display Custom Directive -->
   <h4>Exercise 5:</h4>
   <div class="row">
     <div class="col-md-12">
-     <p  >Girinar or Girnar is one of the most ancient and important place of worship for Jains And Hindus as time to time many spiritual souls comes to Girnar mountain for their spiritual development.
-        This is converted Hindu from Jain pilgrimage.<span [ngStyle]="{backgroundColor: getBackColor()}" [ngClass]="{true :spanColor === 'true'}"> The mountain Girnar is older than the Himalayas believed by different faith and practices.</span> 
-        Lord Neminath had Got Moksha From 5th Tonk,And Lord Neminath Diksha And Kevalgyan Kalyanak Got In Sahsavan. Girnar - Where world's oldest Idol situated (Bhagwan Neminath). 
-        Girnar is part of Junagadh town and district in south-western Gujarat, India.
-        Girnar hill is crowned with 5 peaks. First is at about two-thirds of the way up to the Devi Ambika peak is Jain temples - cluster of mosaic-decorated domes interspersed with elaborate stupas.
-        <span [ngStyle]="{backgroundColor: getBackColor()}" [ngClass]="{true :spanColor === 'true'}"> largest and is the 12th-century Temple of Neminath, dedicated to the 22nd Tirthankar.</span> The nearby triple Temple of Mallinath, dedicated to the ninth Tirthankar, was erected in 1177 by two brothers.
-      </p>
-       
+     <p> this is <span appHighlight>Custom directive.</span></p>
     </div>
   </div>
     
