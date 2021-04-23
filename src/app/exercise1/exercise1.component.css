@@ -1,3 +1,11 @@
 h4{
     color: darkslategrey;
 }
+
+.odd-text{
+color: red;
+}
+
+.even-text{
+color: green;
+}

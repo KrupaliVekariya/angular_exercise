@@ -52,7 +52,7 @@
       <button class="btn btn-primary" (click)="onArrayDisplay()">Click</button>
     </div>
     <div class="col-md-12">
-      <p *ngFor="let info of array let i of array"><b>{{info}}</b></p>
+      <p *ngFor="let info of array; let i of array"><b>{{info}}</b></p>
     </div>
   </div>
   <!-- Display odd or even Number -->
@@ -64,18 +64,17 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <p [ngStyle]="{color:'green'}" *ngIf="txtNumber%2===0">{{txtNumber}}</p>
+      <!-- <p [ngStyle]="txtNumber%2===0 ? {color:'green'} : {color:'red'}">{{txtNumber}}</p> -->
+      <p [ngClass]="txtNumber%2===0 ? 'even-text' : 'odd-text' ">{{txtNumber}}</p> 
+
     </div> 
  
-    <div class="col-md-12">
-      <p [ngStyle]="{color:'red'}" *ngIf="txtNumber%2!==0">{{txtNumber}}</p>
-    </div>
   </div>
   <!-- Display Custom Directive -->
   <h4>Exercise 5:</h4>
   <div class="row">
     <div class="col-md-12">
-     <p> this is <span appHighlight>Custom directive.</span></p>
+     <p appHighlight> this is <span>Custom directive.</span><b>This is bold.</b><span>Custom directive.</span><small>This is small.</small><span>Custom directive.</span></p>
     </div>
   </div>
     

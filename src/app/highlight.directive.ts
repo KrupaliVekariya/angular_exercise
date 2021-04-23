@@ -1,14 +1,17 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
 })
-export class HighlightDirective {
+export class HighlightDirective implements OnInit {
 
-  constructor(private el:ElementRef) {
-    el.nativeElement.style.color="white";
-    el.nativeElement.style.background="black";
-    el.nativeElement.innerText+="- render by Highlight";
-   }
+  constructor(private el:ElementRef) {}
+
+  ngOnInit(){
+    let spans = Array.from(this.el.nativeElement.children); // detect span
+    spans.map((ele:any) => {
+      ele.style.color = ele.localName == "span" ? "gray" : "yellow"; // give style to span
+    })
+  }
 
 }
